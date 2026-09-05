@@ -1,0 +1,11 @@
+# Build output — regenerate with `python tools/package.py`
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini

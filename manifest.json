@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Banner Declutter for Pabbly",
+  "version": "1.0.0",
+  "description": "Hides Pabbly's promo banners, upgrade nags and upsell popups. Not affiliated with Pabbly.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://pabbly.com/*",
+    "*://*.pabbly.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "Banner Declutter for Pabbly",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://pabbly.com/*",
+        "*://*.pabbly.com/*"
+      ],
+      "js": [
+        "src/config.js",
+        "src/storage.js",
+        "src/hider.js",
+        "src/scanner.js",
+        "src/picker.js",
+        "src/content.js"
+      ],
+      "css": [
+        "src/inject.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

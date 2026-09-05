@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Store screenshots — Banner Declutter for Pabbly</title>
+<style>
+  :root {
+    --bg: #0b1310;
+    --surface: #16211d;
+    --surface-hi: #1d2b26;
+    --line: #26382f;
+    --text: #e9f5ef;
+    --muted: #8ca79c;
+    --accent: #00c47f;
+    --accent-ink: #04261a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #050a08;
+    font: 400 16px/1.5 "Segoe UI", -apple-system, Roboto, system-ui, sans-serif;
+    color: var(--text);
+  }
+
+  /* Each shot is exactly the Chrome Web Store's 1280x800 canvas. */
+  .shot {
+    position: relative;
+    width: 1280px;
+    height: 800px;
+    padding: 60px 72px;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 520px at 82% -12%, rgba(0, 196, 127, 0.22), transparent 62%),
+      radial-gradient(700px 460px at 6% 108%, rgba(0, 196, 127, 0.10), transparent 60%),
+      var(--bg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin-top: 14px;
+    font-size: 52px;
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .sub {
+    margin-top: 14px;
+    max-width: 780px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  /* --- browser mockup ----------------------------------------------------- */
+
+  .frame {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f4f7f9;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .frame__bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--surface-hi);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #3d5349; }
+
+  .frame__url {
+    margin-left: 6px;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: #0f1714;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .tag {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tag--before { background: rgba(255, 107, 107, 0.16); color: #ff8f8f; }
+  .tag--after { background: rgba(0, 196, 127, 0.18); color: var(--accent); }
+
+  /* --- the app being decluttered ------------------------------------------ */
+
+  .deal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 13px;
+    background: linear-gradient(90deg, #e01f8b, #7b2ff7);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .deal__btn {
+    padding: 6px 14px;
+    border-radius: 4px;
+    background: #ffd400;
+    color: #241c00;
+    font-size: 13px;
+  }
+
+  .app {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: #fff;
+    border-bottom: 1px solid #e6ecf0;
+  }
+
+  .app__logo { font-size: 15px; font-weight: 700; color: #14243a; }
+
+  .app__search {
+    flex: 1;
+    max-width: 340px;
+    padding: 7px 12px;
+    border: 1px solid #dde5ea;
+    border-radius: 6px;
+    color: #93a3ad;
+    font-size: 13px;
+  }
+
+  .app__upgrade {
+    padding: 7px 16px;
+    border-radius: 5px;
+    background: #ff5a1f;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .app__avatar { width: 28px; height: 28px; border-radius: 50%; background: #cbd7de; }
+
+  .work { display: flex; }
+
+  .work__side {
+    width: 88px;
+    padding: 16px 12px;
+    background: #101820;
+    color: #7d8f9c;
+    font-size: 11px;
+    line-height: 2.1;
+  }
+
+  .work__main { flex: 1; padding: 16px 18px; background: #f4f7f9; }
+
+  .work__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    margin-bottom: 8px;
+    background: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 7px;
+    color: #43535e;
+    font-size: 13px;
+  }
+
+  .work__row:last-child { margin-bottom: 0; }
+  .pill { width: 8px; height: 8px; border-radius: 50%; background: #00c47f; }
+  .pill--idle { background: #c8d3da; }
+  .work__meta { margin-left: auto; color: #93a3ad; font-size: 12px; }
+
+  /* --- shot 1 ------------------------------------------------------------- */
+
+  .stack { margin-top: 34px; display: grid; gap: 22px; }
+
+  /* --- shot 2 ------------------------------------------------------------- */
+
+  .split {
+    flex: 1;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .popup {
+    width: 400px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #0f1714;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  .popup__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .popup__title { font-size: 17px; font-weight: 650; }
+  .popup__status { margin-top: 2px; font-size: 14px; color: var(--accent); }
+
+  .switch {
+    margin-left: auto;
+    width: 48px;
+    height: 28px;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--accent);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .switch__knob { width: 22px; height: 22px; border-radius: 50%; background: var(--accent-ink); }
+
+  .popup__body { padding: 10px; }
+
+  .opt { display: flex; gap: 12px; padding: 11px 10px; border-radius: 8px; }
+  .opt + .opt { margin-top: 2px; }
+
+  .check {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 18px;
+    text-align: center;
+    flex: none;
+  }
+
+  .opt__title { font-size: 15px; font-weight: 550; }
+  .opt__note { margin-top: 2px; font-size: 13px; line-height: 1.35; color: var(--muted); }
+
+  .popup__actions { padding: 12px 10px 14px; margin-top: 6px; border-top: 1px solid var(--line); }
+
+  .btn {
+    padding: 11px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .btn--ghost {
+    margin-top: 7px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--line);
+    font-weight: 550;
+  }
+
+  .points { display: grid; gap: 26px; padding-top: 8px; }
+  .point__title { font-size: 22px; font-weight: 650; letter-spacing: -0.01em; }
+  .point__body { margin-top: 7px; font-size: 17px; line-height: 1.5; color: var(--muted); }
+
+  .rule {
+    display: inline-block;
+    width: 34px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  /* --- shot 3: picker ----------------------------------------------------- */
+
+  .picker-wrap {
+    flex: 1;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #shot-3 .frame { position: relative; }
+
+  /*
+   * Geometry comes from measuring the banner at render time (see the script at
+   * the end) — hand-tuned pixel offsets drift the moment any padding changes.
+   */
+  .highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: rgba(0, 196, 127, 0.22);
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+  }
+
+  .cursor {
+    position: absolute;
+    z-index: 4;
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  }
+
+  /* --- 440x280 small promo tile ------------------------------------------- */
+
+  .tile {
+    position: relative;
+    width: 440px;
+    height: 280px;
+    padding: 30px 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(360px 240px at 88% -10%, rgba(0, 196, 127, 0.28), transparent 62%),
+      var(--bg);
+  }
+
+  .tile__mark {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #00c47f, #008f60);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tile__bar {
+    position: absolute;
+    inset: 41% 17% 41% 17%;
+    border-radius: 2px;
+    background: #fff;
+  }
+
+  .tile__cut {
+    position: absolute;
+    top: -12%;
+    left: 44%;
+    width: 11%;
+    height: 124%;
+    background: #009c6c;
+    transform: rotate(45deg);
+  }
+
+  .tile__title {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .tile__sub {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .hint {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    z-index: 4;
+    transform: translateX(-50%);
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: #10241c;
+    color: #eafff5;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ SHOT 1 ============================ -->
+<section class="shot" id="shot-1">
+  <div>
+    <p class="eyebrow">Banner Declutter for Pabbly</p>
+    <h1>The banners, gone.</h1>
+    <p class="sub">Promo strips, upgrade nags and upsell popups disappear the moment the page loads &mdash; no flash, no leftover coloured bar.</p>
+  </div>
+
+  <div class="stack">
+    <div class="frame">
+      <div class="frame__bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="frame__url">connect.pabbly.com/v2/app/dashboard</span>
+        <span class="tag tag--before">Before</span>
+      </div>
+      <div class="deal">
+        <span>[LIMITED TIME DEAL] Get Unlimited Tasks with the 3-Year Plan &ndash; Save 25% Today!</span>
+        <span class="deal__btn">VIEW OFFER</span>
+      </div>
+      <div class="app">
+        <span class="app__logo">Connect</span>
+        <span class="app__search">Search workflow by name or webhook URL</span>
+        <span class="app__upgrade">Upgrade</span>
+        <span class="app__avatar"></span>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="frame__bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="frame__url">connect.pabbly.com/v2/app/dashboard</span>
+        <span class="tag tag--after">After</span>
+      </div>
+      <div class="app">
+        <span class="app__logo">Connect</span>
+        <span class="app__search">Search workflow by name or webhook URL</span>
+        <span class="app__avatar"></span>
+      </div>
+      <div class="work">
+        <div class="work__side">Dashboard<br>Workflow<br>History<br>Settings</div>
+        <div class="work__main">
+          <div class="work__row"><span class="pill"></span>Invoice sync &rarr; Google Sheets<span class="work__meta">2 min ago</span></div>
+          <div class="work__row"><span class="pill"></span>Stripe payment &rarr; Slack<span class="work__meta">18 min ago</span></div>
+          <div class="work__row"><span class="pill pill--idle"></span>Weekly digest mailer<span class="work__meta">paused</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SHOT 2 ============================ -->
+<section class="shot" id="shot-2">
+  <div>
+    <p class="eyebrow">One switch per nuisance</p>
+    <h1>You decide what goes.</h1>
+  </div>
+
+  <div class="split">
+    <div class="popup">
+      <div class="popup__head">
+        <div>
+          <div class="popup__title">Banner Declutter</div>
+          <div class="popup__status">3 blocks hidden on this page</div>
+        </div>
+        <div class="switch"><div class="switch__knob"></div></div>
+      </div>
+      <div class="popup__body">
+        <div class="opt">
+          <div class="check">&#10003;</div>
+          <div>
+            <div class="opt__title">Promo banners</div>
+            <div class="opt__note">Limited-time deals, discount bars, the login page ad</div>
+          </div>
+        </div>
+        <div class="opt">
+          <div class="check">&#10003;</div>
+          <div>
+            <div class="opt__title">Upgrade buttons</div>
+            <div class="opt__note">Standalone &ldquo;Upgrade&rdquo; and &ldquo;Buy now&rdquo; chrome</div>
+          </div>
+        </div>
+        <div class="opt">
+          <div class="check">&#10003;</div>
+          <div>
+            <div class="opt__title">Upsell popups</div>
+            <div class="opt__note">Overlays, plus the dimmed backdrop they leave behind</div>
+          </div>
+        </div>
+        <div class="popup__actions">
+          <div class="btn">Hide something by clicking it</div>
+          <div class="btn btn--ghost">Show everything</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="points">
+      <div>
+        <span class="rule"></span>
+        <div class="point__title">Nothing is deleted</div>
+        <div class="point__body">Blocks are hidden with CSS, never removed. Flip the switch and the page is exactly as Pabbly shipped it.</div>
+      </div>
+      <div>
+        <span class="rule"></span>
+        <div class="point__title">Real controls stay put</div>
+        <div class="point__body">Pricing, billing and checkout screens are off-limits by design, so genuine purchase buttons keep working.</div>
+      </div>
+      <div>
+        <span class="rule"></span>
+        <div class="point__title">Runs nowhere else</div>
+        <div class="point__body">Permissions stop at pabbly.com. No tracking, no analytics, no network requests of any kind.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SHOT 3 ============================ -->
+<section class="shot" id="shot-3">
+  <div>
+    <p class="eyebrow">Click-to-hide picker</p>
+    <h1>Missed one? Point at it.</h1>
+    <p class="sub">New banner this week? Open the popup, click the thing, and it stays gone on that site &mdash; no selectors, no config files.</p>
+  </div>
+
+  <div class="picker-wrap">
+    <div class="frame">
+      <div class="frame__bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="frame__url">connect.pabbly.com/v2/app/dashboard</span>
+      </div>
+      <div class="deal" id="picker-target">
+        <span>Anniversary Sale &mdash; 40% off every annual plan. Offer ends tonight!</span>
+        <span class="deal__btn">GRAB THE DEAL</span>
+      </div>
+      <div class="app">
+        <span class="app__logo">Connect</span>
+        <span class="app__search">Search workflow by name or webhook URL</span>
+        <span class="app__avatar"></span>
+      </div>
+      <div class="work">
+        <div class="work__side">Dashboard<br>Workflow<br>History<br>Settings</div>
+        <div class="work__main">
+          <div class="work__row"><span class="pill"></span>Invoice sync &rarr; Google Sheets<span class="work__meta">2 min ago</span></div>
+          <div class="work__row"><span class="pill"></span>Stripe payment &rarr; Slack<span class="work__meta">18 min ago</span></div>
+          <div class="work__row"><span class="pill"></span>Typeform lead &rarr; HubSpot<span class="work__meta">1 hr ago</span></div>
+          <div class="work__row"><span class="pill pill--idle"></span>Weekly digest mailer<span class="work__meta">paused</span></div>
+        </div>
+      </div>
+
+      <div class="highlight" id="picker-highlight"></div>
+
+      <svg class="cursor" id="picker-cursor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 2.5 L5 19 L9.2 15.2 L11.8 21 L14.6 19.7 L12 14 L17.5 13.6 Z"
+              fill="#ffffff" stroke="#0b1310" stroke-width="1.4" stroke-linejoin="round"/>
+      </svg>
+
+      <div class="hint">Click the thing you want gone &nbsp;&middot;&nbsp; Esc to cancel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SMALL PROMO TILE ======================= -->
+<section class="tile" id="tile-small">
+  <div class="tile__mark">
+    <div class="tile__bar"></div>
+    <div class="tile__cut"></div>
+  </div>
+  <div class="tile__title">Banner Declutter<br>for Pabbly</div>
+  <div class="tile__sub">Promo strips, upgrade nags and upsell popups &mdash; gone before the page paints.</div>
+</section>
+
+<script>
+  // Lay the picker highlight over the banner's real box, and drop the cursor
+  // just inside its right edge, so the mock matches what the picker actually does.
+  (() => {
+    const banner = document.getElementById('picker-target');
+    const highlight = document.getElementById('picker-highlight');
+    const cursor = document.getElementById('picker-cursor');
+    if (!banner || !highlight || !cursor) return;
+
+    highlight.style.top = `${banner.offsetTop}px`;
+    highlight.style.height = `${banner.offsetHeight}px`;
+
+    cursor.style.top = `${banner.offsetTop + banner.offsetHeight * 0.62}px`;
+    cursor.style.left = `${banner.offsetLeft + banner.offsetWidth - 168}px`;
+  })();
+</script>
+
+</body>
+</html>

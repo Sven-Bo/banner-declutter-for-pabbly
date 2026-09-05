@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Banner Declutter for Pabbly</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="head">
+    <div class="head__text">
+      <h1 class="head__title">Banner Declutter</h1>
+      <p class="head__status" id="status">Checking this tab…</p>
+    </div>
+    <label class="power" title="Turn everything on or off">
+      <input type="checkbox" id="enabled" />
+      <span class="power__track"><span class="power__knob"></span></span>
+    </label>
+  </header>
+
+  <main id="panel" class="panel">
+    <section class="group" aria-label="What to hide">
+      <label class="row">
+        <input type="checkbox" id="hidePromoBars" />
+        <span class="row__body">
+          <span class="row__title">Promo banners</span>
+          <span class="row__note">Limited-time deals, discount bars, the login page ad</span>
+        </span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideUpgradeButtons" />
+        <span class="row__body">
+          <span class="row__title">Upgrade buttons</span>
+          <span class="row__note">Standalone “Upgrade” and “Buy now” chrome</span>
+        </span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideUpsellModals" />
+        <span class="row__body">
+          <span class="row__title">Upsell popups</span>
+          <span class="row__note">Overlays, plus the dimmed backdrop they leave behind</span>
+        </span>
+      </label>
+    </section>
+
+    <section class="actions" aria-label="Manual controls">
+      <button type="button" id="pick" class="btn btn--primary">Hide something by clicking it</button>
+      <div class="actions__pair">
+        <button type="button" id="reveal" class="btn">Show everything</button>
+        <button type="button" id="clear" class="btn">Reset my picks</button>
+      </div>
+    </section>
+  </main>
+
+  <p class="foot" id="foot">Missed something? Use “Hide something by clicking it”.</p>
+
+  <script src="../src/config.js"></script>
+  <script src="../src/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
