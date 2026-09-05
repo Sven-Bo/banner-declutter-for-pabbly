@@ -19,6 +19,7 @@ ASSETS = (
     ("shot-2", "screenshot-2-controls.png", 1280, 800),
     ("shot-3", "screenshot-3-picker.png", 1280, 800),
     ("tile-small", "promo-tile-small.png", 440, 280),
+    ("github-header", "github-header.png", 1280, 400),
 )
 
 VIEWPORT = {"width": 1280, "height": 800}

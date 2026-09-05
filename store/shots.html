@@ -327,6 +327,132 @@
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
   }
 
+  /* --- 1280x400 GitHub README header --------------------------------------- */
+
+  .hero {
+    position: relative;
+    width: 1280px;
+    height: 400px;
+    padding: 0 64px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    background:
+      radial-gradient(620px 420px at 78% -20%, rgba(0, 196, 127, 0.26), transparent 64%),
+      radial-gradient(460px 320px at 4% 118%, rgba(0, 196, 127, 0.12), transparent 62%),
+      var(--bg);
+  }
+
+  .hero__left { flex: 1; }
+
+  .hero__mark {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #00c47f, #008f60);
+  }
+
+  .hero__mark i {
+    position: absolute;
+    inset: 41% 17% 41% 17%;
+    border-radius: 2px;
+    background: #fff;
+  }
+
+  .hero__mark b {
+    position: absolute;
+    top: -12%;
+    left: 44%;
+    width: 11%;
+    height: 124%;
+    background: #009c6c;
+    transform: rotate(45deg);
+  }
+
+  .hero__title {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.028em;
+  }
+
+  .hero__sub {
+    margin-top: 14px;
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .hero__right { width: 520px; display: grid; gap: 14px; }
+
+  .hero__pane {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
+  }
+
+  .hero__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    background: var(--surface-hi);
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero__led { width: 8px; height: 8px; border-radius: 50%; }
+  .hero__led--off { background: #ff6b6b; }
+  .hero__led--on { background: var(--accent); }
+
+  .hero__deal {
+    padding: 11px 14px;
+    background: linear-gradient(90deg, #e01f8b, #7b2ff7);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .hero__app {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 14px;
+  }
+
+  .hero__brand { font-size: 13px; font-weight: 700; color: #14243a; }
+
+  .hero__field {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #dde5ea;
+    border-radius: 5px;
+    color: #a3b1ba;
+    font-size: 11.5px;
+  }
+
+  .hero__cta {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #ff5a1f;
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+
+  .hero__face { width: 22px; height: 22px; border-radius: 50%; background: #cbd7de; }
+
   /* --- 440x280 small promo tile ------------------------------------------- */
 
   .tile {
@@ -559,6 +685,37 @@
       </svg>
 
       <div class="hint">Click the thing you want gone &nbsp;&middot;&nbsp; Esc to cancel</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GITHUB README HEADER ======================= -->
+<section class="hero" id="github-header">
+  <div class="hero__left">
+    <div class="hero__mark"><i></i><b></b></div>
+    <h2 class="hero__title">Banner Declutter<br>for Pabbly</h2>
+    <p class="hero__sub">Pabbly Connect, minus the sales pitch.</p>
+  </div>
+
+  <div class="hero__right">
+    <div class="hero__pane">
+      <div class="hero__label"><span class="hero__led hero__led--off"></span>Without it</div>
+      <div class="hero__deal">[LIMITED TIME DEAL] Save 25% Today &mdash; VIEW OFFER</div>
+      <div class="hero__app">
+        <span class="hero__brand">Connect</span>
+        <span class="hero__field">Search workflow</span>
+        <span class="hero__cta">Upgrade</span>
+        <span class="hero__face"></span>
+      </div>
+    </div>
+
+    <div class="hero__pane">
+      <div class="hero__label"><span class="hero__led hero__led--on"></span>With it</div>
+      <div class="hero__app">
+        <span class="hero__brand">Connect</span>
+        <span class="hero__field">Search workflow</span>
+        <span class="hero__face"></span>
+      </div>
     </div>
   </div>
 </section>
