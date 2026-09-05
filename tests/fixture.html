@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Pabbly Declutter — detection fixture</title>
+<title>Banner Declutter detection fixture</title>
 <link rel="stylesheet" href="../src/inject.css" />
 <style>
   body { margin:0; font:14px/1.5 system-ui, sans-serif; background:#f2f5f8; color:#12211b; }
@@ -29,13 +29,13 @@
 </head>
 <body>
 
-<!-- 1. dashboard promo strip — MUST be hidden -->
+<!-- 1. dashboard promo strip: MUST be hidden -->
 <div class="deal-bar" id="deal-bar">
   <span>👉 [LIMITED TIME DEAL] Get Unlimited Tasks with the 3-Year Plan – Save 25% Today!</span>
   <a class="btn-offer" href="#">👍 VIEW OFFER</a>
 </div>
 
-<!-- 2. app header — MUST survive; its Upgrade button MUST go -->
+<!-- 2. app header: MUST survive; its Upgrade button MUST go -->
 <header class="app-head" id="app-head">
   <strong>Pabbly Connect</strong>
   <input type="search" placeholder="Search Workflow by Name or Webhook URL" />
@@ -44,32 +44,32 @@
 </header>
 
 <div class="shell">
-  <!-- 3. nav — MUST survive -->
+  <!-- 3. nav: MUST survive -->
   <nav class="side" id="side">Dashboard<br>Workflow<br>History<br>Settings</nav>
 
   <div class="main">
-    <!-- 4. false-positive probes — MUST all survive -->
-    <div class="card" id="workflow-row">Workflow: “Save 25 records to Google Sheets” — last run 2 hours ago.</div>
+    <!-- 4. false-positive probes: MUST all survive -->
+    <div class="card" id="workflow-row">Workflow: “Save 25 records to Google Sheets”, last run 2 hours ago.</div>
     <div class="card css-1x9k2ab7f3" id="help-card">Need a hand connecting an app? <a href="#">Learn more</a></div>
-    <div class="card" id="plan-row">Your plan: Free — 100 tasks per month. Renews on the 1st.</div>
+    <div class="card" id="plan-row">Your plan: Free, 100 tasks per month. Renews on the 1st.</div>
     <section class="card pricing-table" id="pricing">
       <h3>Professional</h3><p>$29 billed monthly</p><button id="pricing-buy" type="button">Buy Now</button>
     </section>
   </div>
 </div>
 
-<!-- 5. login screen — panel MUST go, the 2FA card MUST survive -->
+<!-- 5. login screen: panel MUST go, the 2FA card MUST survive -->
 <div class="login">
   <aside class="promo-panel" id="promo-panel">
     <p>STOP PAYING FOR MULTIPLE SUBSCRIPTIONS</p>
     <h1>Get Unlimited Access to All Pabbly Apps at $99!</h1>
     <p>The ultimate suite for business automation, marketing, and sales. One single price. <a href="#">Learn more</a></p>
     <ul>
-      <li>Pabbly Connect — Automate tasks &amp; save 100X time.</li>
-      <li>Pabbly Chatflow — Automate WhatsApp conversation effortlessly.</li>
-      <li>Pabbly Subscription Billing — Sell online &amp; collect payments.</li>
-      <li>Pabbly Email Marketing — Send emails to subscribers.</li>
-      <li>Pabbly AgenticAI — Build automation workflows with AI using prompts.</li>
+      <li>Pabbly Connect: Automate tasks &amp; save 100X time.</li>
+      <li>Pabbly Chatflow: Automate WhatsApp conversation effortlessly.</li>
+      <li>Pabbly Subscription Billing: Sell online &amp; collect payments.</li>
+      <li>Pabbly Email Marketing: Send emails to subscribers.</li>
+      <li>Pabbly AgenticAI: Build automation workflows with AI using prompts.</li>
     </ul>
   </aside>
   <div class="login-card" id="login-card">
@@ -82,12 +82,12 @@
   </div>
 </div>
 
-<!-- 6. upsell modal + backdrop — BOTH must go, scroll must unlock -->
+<!-- 6. upsell modal + backdrop: BOTH must go, scroll must unlock -->
 <div class="modal-backdrop" id="backdrop"></div>
 <div class="modal-wrap" role="dialog" id="modal">
   <div class="modal-card">
     <h2>You are running low on tasks</h2>
-    <p>Upgrade now and save 25% today. Offer ends soon — don't miss out.</p>
+    <p>Upgrade now and save 25% today. Offer ends soon, don't miss out.</p>
     <button type="button">Upgrade Now</button>
   </div>
 </div>

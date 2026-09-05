@@ -2,7 +2,7 @@
  * Orchestration: boot early, watch for injected banners, answer the popup.
  *
  * The observer scans synchronously for the first few seconds so a banner is
- * hidden in the same frame it is added — that is what stops the flash.
+ * hidden in the same frame it is added, which is what stops the flash.
  */
 (() => {
   'use strict';
@@ -62,7 +62,7 @@
     }
   };
 
-  /** Pabbly Connect is a single-page app — re-sweep whenever the route changes. */
+  /** Pabbly Connect is a single-page app, so re-sweep whenever the route changes. */
   const watchRouteChanges = () => {
     const reScan = () => setTimeout(scanNow, LIMITS.scanDebounceMs);
     for (const method of ['pushState', 'replaceState']) {

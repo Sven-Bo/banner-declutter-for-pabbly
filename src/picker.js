@@ -15,7 +15,7 @@
 
   const state = { active: false, box: null, hint: null, target: null, onDone: null };
 
-  /** Reject hashed/atomic class names — they change on every deploy. */
+  /** Reject hashed/atomic class names; they change on every deploy. */
   const isStableToken = (token) =>
     Boolean(token) &&
     token.length > 1 &&
@@ -51,7 +51,7 @@
 
   /**
    * Build the shortest selector that resolves to exactly this element.
-   * Returns null if no unique path is found — a selector that matched several
+   * Returns null if no unique path is found. A selector matching several
    * elements would quietly hide unrelated parts of the page on the next load.
    */
   const selectorFor = (el) => {
@@ -118,7 +118,7 @@
     stop({ picked: true, selector, persisted: Boolean(selector) });
 
     // Always honour the click. Persist it only when we can address the element
-    // unambiguously — otherwise it is hidden for this page view alone.
+    // unambiguously. Otherwise it is hidden for this page view alone.
     hider.hide(el, 'custom');
     if (selector) await storage.addCustomSelector(location.hostname, selector);
   };

@@ -58,7 +58,7 @@
       return;
     }
     if (!settings.enabled) {
-      setStatus('Paused — banners are showing');
+      setStatus('Paused, banners are showing');
       return;
     }
     const status = await askTab('PBB_STATUS');
@@ -129,7 +129,7 @@
       await refreshStatus(settings);
     } catch (err) {
       console.error('[Banner Declutter] popup failed to start:', err);
-      setStatus('Something went wrong — try reopening this');
+      setStatus('Something went wrong, try reopening this');
     }
   };
 

@@ -27,11 +27,11 @@
 
 ## What goes away
 
-🎯 **The deal strip** — that pink and purple "[LIMITED TIME DEAL] … VIEW OFFER" bar across the top of every page, and the "$99 for all Pabbly apps" panel that fills half the login screen.
+🎯 **The deal strip.** That pink and purple "[LIMITED TIME DEAL] … VIEW OFFER" bar across the top of every page, and the "$99 for all Pabbly apps" panel that fills half the login screen.
 
-🎯 **The upgrade nags** — standalone "Upgrade" and "Buy now" buttons wedged into the app header.
+🎯 **The upgrade nags.** Standalone "Upgrade" and "Buy now" buttons wedged into the app header.
 
-🎯 **The popups** — promo overlays, plus the greyed-out backdrop and the frozen page scroll they leave behind when you dismiss them.
+🎯 **The popups.** Promo overlays, plus the greyed-out backdrop and the frozen page scroll they leave behind when you dismiss them.
 
 Everything is hidden with CSS, never deleted. Flip the switch off and Pabbly looks exactly as it shipped.
 
@@ -45,7 +45,7 @@ Everything is hidden with CSS, never deleted. Flip the switch off and Pabbly loo
 
 ## Install it
 
-**[Add it from the Chrome Web Store](https://chromewebstore.google.com/detail/banner-declutter-for-pabb/cgjkbnmafmadbefbohfamokaaemjanfc)** — one click, and it keeps itself updated.
+**[Add it from the Chrome Web Store](https://chromewebstore.google.com/detail/banner-declutter-for-pabb/cgjkbnmafmadbefbohfamokaaemjanfc)**, one click, and it keeps itself updated.
 
 That's the whole setup. Open Pabbly and the banners are already gone. Tabs you had open beforehand get cleaned up too, so there's nothing to reload.
 
@@ -54,14 +54,14 @@ That's the whole setup. Open Pabbly and the banners are already gone. Tabs you h
 ## Questions you might reasonably have
 
 **Will it break my workflows?**
-No. It hides promotional blocks and nothing else. Pricing, billing and checkout screens are explicitly off-limits, so real purchase buttons keep working — the extension steps over anything containing a form field or sitting inside a billing page.
+No. It hides promotional blocks and nothing else. Pricing, billing and checkout screens are explicitly off-limits, so real purchase buttons keep working. The extension steps over anything containing a form field or sitting inside a billing page.
 
 **What if Pabbly adds a new banner?**
 They will. Open the extension, click **"Hide something by clicking it"**, then click the offending thing. It stays gone on that site from then on. **"Reset my picks"** undoes those choices if you overdo it.
 
 <a name="what-about-my-data"></a>
 **What about my data?**
-There isn't any. The extension makes no network requests of any kind — no tracking, no analytics, no phoning home. Its permissions stop at `pabbly.com`, so it physically cannot see any other site you visit. Your on/off switches live in your own Chrome profile.
+There isn't any. The extension makes no network requests of any kind: no tracking, no analytics, no phoning home. Its permissions stop at `pabbly.com`, so it physically cannot see any other site you visit. Your on/off switches live in your own Chrome profile.
 
 **Can I turn it off temporarily?**
 Yes. There's a master switch, plus one switch per category, plus a "Show everything" button that restores the page until you reload.
@@ -73,11 +73,11 @@ Yes. There's a master switch, plus one switch per category, plus a "Show everyth
 
 <br>
 
-The naive version — hide anything containing the word "deal" — falls apart immediately. During development, a column holding four harmless cards ("Save 25 records to Sheets", "$29 billed monthly", "Learn more") collected enough stray signal to look promotional, and the entire dashboard column vanished.
+The naive version, hiding anything that contains the word "deal", falls apart immediately. During development, a column holding four harmless cards ("Save 25 records to Sheets", "$29 billed monthly", "Learn more") collected enough stray signal to look promotional, and the entire dashboard column vanished.
 
 So detection runs in two phases:
 
-**1. Seed.** Find the *smallest* blocks that are densely promotional. A block needs strong wording (`limited time deal`, `lifetime access`, `25% off`), or two weaker signals plus a call to action. On top of that, the promo wording has to cover at least 35% of the block's own text. That density test is the important part — a real banner measures around 75% promotional language, an ordinary content column around 12%.
+**1. Seed.** Find the *smallest* blocks that are densely promotional. A block needs strong wording (`limited time deal`, `lifetime access`, `25% off`), or two weaker signals plus a call to action. On top of that, the promo wording has to cover at least 35% of the block's own text. That density test is the important part. A real banner measures around 75% promotional language, an ordinary content column around 12%.
 
 **2. Grow.** Climb outwards from the seed so the whole banner disappears as one unit, instead of leaving an empty coloured strip behind. It only climbs while every neighbour it would swallow is itself promotional or negligible, *and* there's positive evidence the parent really is the banner.
 
@@ -100,7 +100,7 @@ Then open `chrome://extensions`, turn on **Developer mode**, click **Load unpack
 
 ```
 manifest.json          MV3 manifest
-src/config.js          Phrases, selectors, thresholds - all frozen, all in one place
+src/config.js          Phrases, selectors, thresholds. All frozen, all in one place
 src/storage.js         chrome.storage.sync wrapper; every write is a merge, never a mutation
 src/hider.js           The only file that touches visibility. Reversible by design
 src/scanner.js         Seed-and-grow detection

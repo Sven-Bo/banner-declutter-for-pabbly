@@ -1,8 +1,8 @@
 # Chrome Web Store listing copy
 
-Everything the "Store listing" page asks for. The store renders the description as
-**plain text** — no markdown, no HTML — so the copy below uses caps for headings and
-`•` for bullets deliberately. Keep it that way.
+Everything the "Store listing" and "Privacy practices" tabs ask for. The store
+renders the description as **plain text**, no markdown and no HTML, so the caps
+headings and `•` bullets below are deliberate. Keep it that way.
 
 ---
 
@@ -16,7 +16,7 @@ Hides Pabbly's promo banners, upgrade nags and upsell popups. Not affiliated wit
 
 ## Category
 
-**Functionality & UI** — the category for extensions that change how an existing
+**Functionality & UI**, the category for extensions that change how an existing
 site looks or behaves. Second choice: Workflow & Planning.
 
 ## Language
@@ -33,9 +33,9 @@ Pabbly Connect is a capable tool that ships with a lot of promotional noise. Thi
 
 WHAT IT HIDES
 
-• Promo banners — the "[LIMITED TIME DEAL] ... VIEW OFFER" strip across the top of the dashboard, the "$99 for all Pabbly apps" panel on the login screen, and anything worded like them.
-• Upgrade buttons — standalone "Upgrade" and "Buy now" chrome in the app header.
-• Upsell popups — promotional overlays, plus the dimmed backdrop and the page scroll lock they leave behind.
+• Promo banners: the "[LIMITED TIME DEAL] ... VIEW OFFER" strip across the top of the dashboard, the "$99 for all Pabbly apps" panel on the login screen, and anything worded like them.
+• Upgrade buttons: standalone "Upgrade" and "Buy now" chrome in the app header.
+• Upsell popups: promotional overlays, plus the dimmed backdrop and the page scroll lock they leave behind.
 
 Each one is a separate switch in the toolbar popup, and a master switch pauses everything at once.
 
@@ -45,11 +45,11 @@ Blocks are hidden with CSS, never removed from the page. Turn the extension off 
 
 WHEN IT MISSES ONE
 
-New banners show up regularly. Open the popup, click "Hide something by clicking it", then click the offending element — it stays hidden on that site from then on. "Reset my picks" undoes those choices, and "Show everything" puts them back until you reload.
+New banners show up regularly. Open the popup, click "Hide something by clicking it", then click the offending element. It stays hidden on that site from then on. "Reset my picks" undoes those choices, and "Show everything" puts them back until you reload.
 
 HOW IT DECIDES
 
-It does not simply search for the word "deal". It looks for blocks where promotional wording covers a real share of the text — a banner runs around 75% promo language, an ordinary content column around 12% — then expands outwards only while the surrounding content is promotional too. That is what stops it swallowing your workflow list.
+It does not simply search for the word "deal". It looks for blocks where promotional wording covers a real share of the text, around 75% for a banner against around 12% for an ordinary content column, then expands outwards only while the surrounding content is promotional too. That is what stops it swallowing your workflow list.
 
 PRIVACY
 
@@ -68,27 +68,29 @@ Not affiliated with, endorsed by, or sponsored by Pabbly. "Pabbly" is a trademar
 | Screenshot 2 | `store/screenshot-2-controls.png` | 1280×800 |
 | Screenshot 3 | `store/screenshot-3-picker.png` | 1280×800 |
 | Small promo tile (optional) | `store/promo-tile-small.png` | 440×280 |
-| Marquee promo tile (optional) | — | 1400×560 |
+| Marquee promo tile (optional) | none | 1400×560 |
 
 The marquee tile only matters if Google ever features the extension. Skip it.
 
+`store/github-header.png` (1280×400) is for the repo README, not the store.
+
 ## Additional fields further down the page
 
-- **Official URL / Homepage URL / Support URL** — optional. A page on your own site,
+- **Official URL / Homepage URL / Support URL**: optional. A page on your own site,
   or leave blank.
-- **Mature content** — No.
-- **Visibility** — Unlisted gives a working install link without appearing in search.
+- **Mature content**: No.
+- **Visibility**: Unlisted gives a working install link without appearing in search.
   Public if you want discovery.
 
 ---
 
 # Privacy practices tab
 
-Save Draft after filling this in — the tab does not autosave.
+Save Draft after filling this in. The tab does not autosave.
 
 ## Single purpose description
 
-This extension has one purpose: to hide promotional content — deal banners, upgrade prompts and upsell overlays — inside the Pabbly web application at pabbly.com, so the user can work in an uncluttered interface. It does nothing else and runs nowhere else.
+This extension has one purpose: to hide promotional content, meaning deal banners, upgrade prompts and upsell overlays, inside the Pabbly web application at pabbly.com, so the user can work in an uncluttered interface. It does nothing else and runs nowhere else.
 
 ## Host permission justification (`*://pabbly.com/*`, `*://*.pabbly.com/*`)
 
@@ -96,7 +98,7 @@ The extension's entire function takes place inside the Pabbly web app, so it nee
 
 ## `scripting` justification
 
-Used only at install and update time, to inject the extension's own bundled content scripts into Pabbly tabs that are already open. Without it the user would have to manually reload every open Pabbly tab before the extension did anything. It injects only files packaged inside the extension (src/*.js and src/inject.css) — never remote, generated or user-supplied code — and only into tabs already covered by the pabbly.com host permission.
+Used only at install and update time, to inject the extension's own bundled content scripts into Pabbly tabs that are already open. Without it the user would have to manually reload every open Pabbly tab before the extension did anything. It injects only files packaged inside the extension (src/*.js and src/inject.css), never remote, generated or user-supplied code, and only into tabs already covered by the pabbly.com host permission.
 
 ## `storage` justification
 
@@ -110,8 +112,8 @@ The extension contains no remote code. All JavaScript and CSS is packaged in the
 
 ## Data usage
 
-Leave **every** data-type checkbox unchecked — the extension collects nothing and
-transmits nothing. Reading the DOM on-device is not collection.
+Leave **every** data-type checkbox unchecked. The extension collects nothing and
+transmits nothing; reading the DOM on-device is not collection.
 
 Then tick all three certification boxes:
 

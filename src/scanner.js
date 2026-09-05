@@ -166,7 +166,7 @@
    * Climb out of a seed to the full banner container.
    *
    * Two conditions, and both matter. Every neighbour we would swallow has to be
-   * absorbable — that stops us eating real content. And there has to be positive
+   * absorbable, which stops us eating real content. And there has to be positive
    * evidence the parent *is* the banner, otherwise a column of four harmless
    * cards (each scoring a stray point for "Learn more" or "per month") would
    * look absorbable and the whole column would vanish.

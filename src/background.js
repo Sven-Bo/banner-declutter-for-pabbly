@@ -39,5 +39,5 @@ const injectIntoOpenTabs = async () => {
 
 chrome.runtime.onInstalled.addListener(injectIntoOpenTabs);
 chrome.runtime.onStartup.addListener(() => {
-  /* Fresh tabs get the declared content script automatically — nothing to do. */
+  /* Fresh tabs get the declared content script automatically, so there is nothing to do. */
 });

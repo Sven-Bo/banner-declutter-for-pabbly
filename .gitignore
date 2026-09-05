@@ -1,4 +1,4 @@
-# Build output — regenerate with `python tools/package.py`
+# Build output. Regenerate with `python tools/package.py`
 dist/
 
 # Python

@@ -1,6 +1,6 @@
 /**
  * Shared configuration: what counts as a promo, and where we are never allowed
- * to touch the page. Everything here is frozen — nothing mutates it at runtime.
+ * to touch the page. Everything here is frozen; nothing mutates it at runtime.
  */
 (() => {
   'use strict';
@@ -20,7 +20,7 @@
   });
 
   /**
-   * Strong signals — a single match is enough to call a block "promo".
+   * Strong signals: a single match is enough to call a block "promo".
    * Kept deliberately wordy so they can't fire on a workflow name.
    */
   const STRONG_PATTERNS = Object.freeze([
@@ -38,7 +38,7 @@
     /one\s+single\s+price/i
   ]);
 
-  /** Weak signals — two of these (or one plus a CTA) make a promo. */
+  /** Weak signals: two of these (or one plus a CTA) make a promo. */
   const WEAK_PATTERNS = Object.freeze([
     /\bhurry\b/i,
     /\bends\s+(in|soon|today|tonight)\b/i,
@@ -92,7 +92,7 @@
     '[id*="pricing" i]'
   ].join(', ');
 
-  /** Structural nodes we must never collapse — hiding these blanks the app. */
+  /** Structural nodes we must never collapse; hiding these blanks the app. */
   const NEVER_HIDE_SELECTOR = [
     'html', 'head', 'body', 'main', 'script', 'style', 'link',
     '[role="main"]',
