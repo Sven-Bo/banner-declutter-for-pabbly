@@ -6,12 +6,17 @@ CSS — nothing is deleted, so everything comes back the moment you switch it of
 
 ## Install
 
-1. Open `chrome://extensions`
-2. Turn on **Developer mode** (top right)
-3. Click **Load unpacked** and pick this folder (`pabbly-declutter`)
+**[Add it from the Chrome Web Store](https://chromewebstore.google.com/detail/banner-declutter-for-pabb/cgjkbnmafmadbefbohfamokaaemjanfc)** — one click, and it updates itself.
 
-Tabs that were already open get patched automatically on install. After that it
-runs on every Pabbly page you load.
+### From source
+
+1. Clone this repo
+2. Open `chrome://extensions`
+3. Turn on **Developer mode** (top right)
+4. Click **Load unpacked** and pick the cloned folder
+
+Either way, Pabbly tabs that were already open get patched automatically — no
+reload needed. After that it runs on every Pabbly page you load.
 
 ## What it hides
 
@@ -101,6 +106,9 @@ the archive root (the store rejects it otherwise) and only the files the manifes
 actually references — no tests, no tooling. It fails loudly if the manifest points
 at something the package omits. Bump `version` in `manifest.json` before every
 re-upload.
+
+Published listing: <https://chromewebstore.google.com/detail/banner-declutter-for-pabb/cgjkbnmafmadbefbohfamokaaemjanfc>
+Extension ID: `cgjkbnmafmadbefbohfamokaaemjanfc`
 
 Listing screenshots live in `store/` at the required 1280x800. Regenerate them
 after any UI change:
